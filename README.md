@@ -5,22 +5,89 @@ i will learn Linked List Programming in Go python  and c
 
 
 Singley Linked list:
+
+
+
+
+
+
+
+
     [head]                                [tail]
       |--[d:a]-->[d:a]-->[d:a]-->[d:a]-->[]--|
 
+
+
+
+
+
+
+
+
+
 Circular Singley  linked list:
+
+
+
+
+
+
+
+
     [head]                   
       |--[d:a]-->[d:a]-->[d:a]-->[d:a]-->[d:a]--|
-      +-----------------------------------------+               
+      +-----------------------------------------+  
+
+
+
+
+
+
 Doubly Linked list:
+
+
+
+
+
+
+
+
      [head]                ---                               [tail]
       |--[a:d:a]<-->[a:d:a]<-->[a:d:a]<-->[a:d:a]<-->[a:d:a]--|
 
+
+
+
+
+
+
 Doubly Circular Linked list:
+
+
+
+
+
+
      [head]                ---                               [tail]
       |--[a:d:a]<-->[a:d:a]<-->[a:d:a]<-->[a:d:a]<-->[a:d:a]--|
       +-------------------------------------------------------+ 
+
+
+
+
+
+
+
 Stack:
+
+
+
+
+
+
+
+
+
     |  10   |----->top
     |-------|           [Last input First output :LIPO]
     |  20   |       
@@ -34,7 +101,17 @@ Stack:
 
 
 Queue:
+
+
+
+
+
     FIFO:                                   LILO:
+
+
+
+
+
     ----------------------------------------------
     |  50  |  30 | 38  | 34  | 29 | 39 | 93 | 9  |
     ----------------------------------------------
