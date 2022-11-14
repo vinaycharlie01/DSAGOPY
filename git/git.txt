@@ -1,0 +1,108 @@
+https://github.com/barishandcloud?tab=repositories
+
+chek the version
+git --version
+
+
+pwd:
+which git
+
+how to config:
+ git must be installed
+ 3 types of config
+ ------------------
+  git config <name>
+
+  1. --global
+           :my personal impermmation
+  3. --system
+            :
+            my system all user impermation
+  2. --local
+           :
+           praticular project impermation
+
+
+how to open the git config:
+    git config --global
+    git config --global -e
+
+
+how to set git config:
+       git config --global user.name "vini"
+       git config --global user.email "vinaykshatriyas05@gmail.com"
+how to remove from git config:
+    git config --unset --global user.name
+    git config --unset --global user.email
+
+
+
+this is for git config details:
+---------------------------------
+git config --list
+
+
+
+how to take help 
+----------------
+git help <name>
+
+
+how to set defalt nodepad++
+--------------------------
+set env variable
+git config --global core.editor"notepad++.exe -multiInst -nosession"
+
+
+how to set aliases name:
+     step1: notepad++ .bash_profile
+
+     step2: alias npp="notepad++.exe -multiInst -nosession"
+
+day2
+------
+
+1)commit
+2)clone
+3)tracked/Untracked files
+3)branch
+
+
+Commit:
+author:
+date:
+why its commit
+
+
+clone:
+    copy the code exact
+
+tacking/Untraking:
+        track the 
+        .git
+        ----- 
+        track the all the files and folders
+
+
+master defalt branch
+
+
+origin
+
+
+
+working to staging we use:  add
+staging to .git repositories we use:  commit
+local to remote ---we use push
+
+
+how to copy or clone:
+         git clone <urlname>
+
+
+git status:
+------------
+to chek the git which position
+
+next:
+   git add <your foldername>

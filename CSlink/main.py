@@ -7,7 +7,6 @@ class Node:
 class Clink:
     def __init__(self):
         self.tail = None
-
     def append(self, n):
         newNode = Node(n)
         if self.tail == None:
