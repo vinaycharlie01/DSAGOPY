@@ -40,6 +40,17 @@ class Slink:
             p = p.next
             count+=1
         return count
+    def reverse(self):
+        prev=None
+        currNode= self.head
+        nextNode= self.head
+        while nextNode !=None:
+            nextNode = nextNode.next
+            currNode.next = prev
+            prev = currNode
+            currNode = nextNode
+        self.head=prev
+        self.tail=currNode
     def display(self):
         p=self.head
         while p:
@@ -52,4 +63,7 @@ l.append(2)
 l.append(3)
 l.append(4)
 l.append(60)
+l.display()
+print()
+l.reverse()
 l.display()

@@ -114,6 +114,8 @@ func (l *Slink) Reverse() *Node {
 	// 	fmt.Print(p.data, " ")
 	// 	p = p.next
 	// }
+	l.head = prev
+	l.tail = currNode
 
 	return prev
 
@@ -181,6 +183,8 @@ func main() {
 	l.append(60)
 	// l.push(70, 3)
 	l.pop(7)
+	l.display()
+	l.Reverse()
 	l.display()
 
 	// fmt.Println("")
