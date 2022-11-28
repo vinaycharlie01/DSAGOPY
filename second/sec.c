@@ -30,7 +30,6 @@ SinglyLinkedListNode* create_singly_linked_list_node(int node_data) {
     return node;
 }
 
-<<<<<<< HEAD
 // void insert(LinkedList* L, int node_data) {
 //     Node* node = create(node_data);
 //     if (!L->head) {
@@ -103,17 +102,6 @@ void DelectNodeany(LinkedList* llist,int pos){
         temp=t->next;
         t->next=temp->next;
     free(temp);
-=======
-void insert_node_into_singly_linked_list(int node_data) {
-    SinglyLinkedListNode* node = create_singly_linked_list_node(node_data);
-    SinglyLinkedList* llist = (SinglyLinkedList*)malloc(sizeof(SinglyLinkedList));
-    llist->head = NULL;
-    llist->tail = NULL;
-    if (llist->head==NULL) {
-        llist->head = node;
-    } else {
-        llist->tail->next = node;
->>>>>>> c86f2e85f11047d04ecda404bed9389244dd9c77
     }
 
     llist->tail = node;
