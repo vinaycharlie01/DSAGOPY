@@ -403,3 +403,109 @@ func ShellSort(arr []int) {
 	}
 }
 ```
+---
+# Quiksort
+---
+```go
+    quikSort
+    arr=[9,2,4,1,10,11,12,8]
+    
+    [9,2,4,1,10,11,12,8]
+    pivot=arr[start]
+    start=0
+    end=lenth(arr)-1
+[pivot element=9]
+     | 
+    [9,2,4,1,10,11,12,8]
+     |               |
+    [start]          [end]
+    if start ele <=pivot element move start
+    if end element is  greate then pivot element move end
+[pivot element=9]
+     | 
+    [9,2,4,1,10,11,12,8]
+       |              |
+     [start]       [end]
+[pivot element=9]
+     | 
+    [9,2,4,1,10,11,12,8]
+         |            |
+       [start]      [end]
+[pivot element=9]
+     | 
+    [9,2,4,1,10,11,12,8]
+           |          |
+         [start]    [end]
+[pivot element=9]
+     | 
+    [9,2,4,1,10,11,12,8]
+              |       |
+           [start]  [end]
+[pivot element=9]
+     | 
+    [9,2,4,1,8,11,12,10]
+                |     |
+            [start]  [end]
+[pivot element=9]
+     | 
+    [9,2,4,1,8,11,12,10]
+               |   |
+           [start][end]
+[pivot element=9]
+     | 
+    [9,2,4,1,8,11,12,10]
+               |
+           [start]
+             [end]
+[pivot element=9]
+     | 
+    [9,2,4,1,8,11,12,10]
+             |   |
+             | [start]
+           [end]
+if end<start:
+swap(pivot ,end)
+[pivot element=9]
+     | 
+    [8,2,4,1,9,11,12,10]
+             |   |
+             | [start]
+           [end]
+   [8,2,4,1][9][11,12,10]
+             |
+          [sorted]
+repeat same method 
+   [1,2,4],[8]
+    [1,2,4]
+func Partion(arr []int, lb int, ub int) int {
+	Pivot := arr[lb]
+	start := lb
+	end := ub
+	for start < end {
+		if arr[start] <= Pivot {
+			start++
+		}
+		for arr[end] > Pivot {
+			end--
+		}
+		if start < end {
+			temp := arr[start]
+			arr[start] = arr[end]
+			arr[end] = temp
+		}
+	}
+	temp := arr[lb]
+	arr[lb] = arr[end]
+	arr[end] = temp
+	return end
+}
+
+func QueKSort(arr []int, lb int, ub int) {
+	if lb < ub {
+		Mid := Partion(arr, lb, ub)
+		QueKSort(arr, lb, Mid-1)
+		QueKSort(arr, Mid+1, ub)
+	}
+}
+
+```

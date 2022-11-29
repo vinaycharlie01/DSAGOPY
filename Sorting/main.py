@@ -2,8 +2,7 @@ class Sorting:
     def __init__(self,array):
         self.array=array
     '''
-    Bub
-
+    Bubblesort --->its buble up at the last 
     '''
     def bubblesort(self):
         arr=self.array
@@ -16,6 +15,9 @@ class Sorting:
             if flag==0:
                 break
         return self.array
+    '''
+    Selectionsort --->min element swap 
+    '''
     def SelectionSort(self):
         arr=self.array
         for i in range(0,len(arr)-1):
@@ -25,6 +27,9 @@ class Sorting:
                     min=j
             arr[min],arr[i]=arr[i],arr[min]
         return self.array
+    '''
+    insertionSort --->insert corect positions
+    '''
     def insertionSort(self):
         arr=self.array
         for i in range(1,len(arr)):
@@ -35,6 +40,9 @@ class Sorting:
                 j=j-1
             arr[j+1]=temp
         return self.array
+    '''
+    shellSort --->gap
+    '''
     def shellSort(self):
         arr=self.array
         gap=len(arr)//2
@@ -53,6 +61,9 @@ class Sorting:
                 j+=1
             gap=gap//2
         return self.array
+    '''
+    quik Sort --->gap
+    '''
     def partion(self,lb,ub):
         arr=self.array
         pivot=arr[lb]
@@ -79,6 +90,9 @@ class Sorting:
     def quikSort(self):
         self.quikSortPart(0, len(self.array)-1)
         return self.array
+    '''
+    merge Sort --->gap
+    '''
     def merge_sort(self):
         if len(self.array) > 1:
             m = len(self.array)//2
@@ -118,3 +132,6 @@ a.shellSort()
 a.quikSort()
 a.merge_sort()
 print(a.array)
+# print(a.SelectionSort(),a.insertionSort(),a.shellSort())
+# print(a.quikSort())
+# print(a.mergesort())
