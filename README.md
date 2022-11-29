@@ -238,3 +238,168 @@ func SelectionSort(arr []int) {
 	}
 }
 ```
+---
+# InsertionSort
+---
+
+```go
+   one element is sorted and other elements is unsorted
+   arrr=[4,3,2,1]
+   pass1:
+        [4|3,2,1]
+     soted| unsorted
+        find the corect position of 3 and insert the element 
+        [?,4,2,1]
+        is there any element left side chek else insert
+        [3,4,2,1]
+    same method apply pass1
+    pass2:
+        [3,4|2,1]
+       soted| unsorted  
+       find the corect position of 2 and insert the element
+       [3,?,4,1]
+       [?,3,4,1]
+       is there any element left side chek else insert
+       [2,3,4,1]
+    pass3:
+        [2,3,4|1]
+         soted| unsorted
+        find the corect position of 2 and insert the element
+        [2,3,?,4]
+        [2,?,3,4]
+        [?,2,3,4]
+        [1,2,3,4]
+func InsertionSort(arr []int) {
+	//one element is alredy sorted so we run loop index 1 to lenth of array
+	for i := 1; i < len(arr); i++ {
+		temp := arr[i]
+		j := i - 1
+		for j >= 0 && arr[j] > temp {
+			arr[j+1] = arr[j]
+			j--
+		}
+		arr[j+1] = temp
+	}
+}     
+```
+---
+# ShellSort
+---
+
+```go
+   arr=[9,2,4,1,3,5,6,7,8]
+   lenth of arr=9
+       find the gap
+            gap=len(arr)/2
+            start gap=4 and stop gap>0 and  step gap=gap/2
+    gap=4
+        [9,2,4,1,3,5,6,7,8]
+         i       j
+        if i>j{
+            swap(i,j)
+        }else{
+            break
+        }
+        swap                         
+        [3,2,4,1,9,5,6,7,8]
+             i       j
+        no swap
+        [3,2,4,1,9,5,6,7,8]
+             i       j
+        no swap
+        [3,2,4,1,9,5,6,7,8]
+               i       j
+        swap
+         [3,2,4,1,9,5,6,7,8]
+                  i       j
+         [3,2,4,1,8,5,6,7,9]
+         chek the back element also
+         3>8---false
+    gap=2 
+        [3,2,4,1,8,5,6,7,9]
+         i   j
+         no swap
+        [3,2,4,1,8,5,6,7,9]
+         i   j
+        swap
+        [3,2,4,1,8,5,6,7,9]
+           i   j
+        [3,1,4,2,8,5,6,7,9]
+           back element -1 index so  dont do anything
+        no swap
+        [3,1,4,2,8,5,6,7,9]
+             i   j
+        no swap
+        [3,1,4,2,8,5,6,7,9]
+               i   j
+        swap
+        [3,1,4,2,8,5,6,7,9]
+                 i   j
+        [3,1,4,2,6,5,8,7,9]
+             J   i
+             no swap
+        no swap
+        [3,1,4,2,6,5,8,7,9]
+                   i   j
+        no swap
+        [3,1,4,2,6,5,8,7,9]
+                     i   j
+    gap=1 
+        [3,1,4,2,6,5,8,7,9] 
+         i j
+        swap
+        [1,3,4,2,6,5,8,7,9] 
+           i j
+        no swap
+        [1,3,4,2,6,5,8,7,9] 
+           i j
+        swap
+        [1,3,4,2,6,5,8,7,9] 
+             j i
+        [1,3,2,4,6,5,8,7,9]
+           j i
+        [1,2,3,4,6,5,8,7,9]
+         j i
+        
+        no swap
+        [1,2,3,4,6,5,8,7,9]
+               i j
+        no swap
+        [1,2,3,4,6,5,8,7,9]
+                 i j
+        no swap
+        [1,2,3,4,5,6,8,7,9]
+               j i
+
+
+        no swap
+        [1,2,3,4,5,6,8,7,9]
+                   i j
+        swap
+        [1,2,3,4,5,6,8,7,9]
+                     i j
+        no swap
+        [1,2,3,4,5,6,7,8,9]
+                   j i
+        
+         no swap
+        [1,2,3,4,5,6,7,8,9]
+                       i j 
+
+
+          
+func ShellSort(arr []int) {
+	for gap := len(arr) / 2; gap > 0; gap = gap / 2 {
+		for j := gap; j < len(arr); j++ {
+			for i := j - gap; i >= 0; i = i - gap {
+				if arr[i+gap] > arr[i] {
+					break
+				} else {
+					arr[i], arr[i+gap] = arr[i+gap], arr[i]
+				}
+
+			}
+		}
+	}
+}
+```
