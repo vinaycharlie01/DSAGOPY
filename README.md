@@ -179,7 +179,7 @@ func BabbleSort(arr []int) {
 
 ```
 ---
-#SelectionSort
+# SelectionSort
 ---
 ```go
   
