@@ -125,8 +125,12 @@ func main() {
 
 ```
 
+---
+# Bubblesort
+---
+
 ```go
-   Bubblesort --->its buble up at the last 
+    --->its buble up at the last 
     arr =[4,3,2,1]
     lenth of arr=4
     pass1:
