@@ -178,9 +178,10 @@ func BabbleSort(arr []int) {
 }     
 
 ```
+#SelectionSort
 ```go
-   #SelectionSort
-              --->assume 1st element is min element find the least min element then swap
+  
+    --->assume 1st element is min element find the least min element then swap
     arr =[4,3,2,1]
     lenth of arr=4
     pass1:
