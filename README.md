@@ -509,3 +509,61 @@ func QueKSort(arr []int, lb int, ub int) {
 }
 
 ```
+---
+# Merge sort
+---
+```go
+   arr=[1,2,3,9,6,5,8,7]
+   lenth of array =8
+   split all the elements
+          [1,2,3,9,6,5,8,7]
+              /        \
+        [ 1,2,3,9]   [6,5,8,7]
+           /   \        /  \
+       [1,2]  [3,9]  [6,5][8,7]
+        /\     /\      /\   /\
+      [1][2] [3][9]  [6][5][8][7]
+       i  j           i  j
+       [1,2]  [3,9]   [5,6] [7,8]  
+         i      j       i     j                          
+       [1,2,3,9]       [5,6,7,8]
+           i               j
+ output  = [1,2,3,5,6,7,8,9]
+func Merge(a []int, b []int) []int {
+	L := 0
+	R := 0
+	arr := []int{}
+	for L < len(a) && R < len(b) {
+		if a[L] < b[R] {
+			arr = append(arr, a[L])
+			L++
+		} else {
+			arr = append(arr, b[R])
+			R++
+		}
+	}
+	if L < len(arr) {
+		arr = append(arr, a[L:]...)
+	}
+	if R < len(arr) {
+		arr = append(arr, b[R:]...)
+	}
+	return arr
+
+}
+
+func MergeSort(arr []int) (arr2 []int) {
+	if len(arr) < 2 {
+		return arr
+	}
+	a := MergeSort(arr[:len(arr)/2])
+	b := MergeSort(arr[len(arr)/2:])
+	s := Merge(a, b)
+	for i, v := range s {
+		arr[i] = v
+	}
+	return arr
+
+}
+   
+```
