@@ -1,11 +1,9 @@
-This is c programming dsa linked list
 
-i will learn Linked List Programming in Go python  and c
-
-
+---
+# DSA In Go ,Python,C
+---
 
 Singley Linked list:
-
 
 
 
