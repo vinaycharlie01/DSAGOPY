@@ -18,10 +18,14 @@ type BTree struct {
 	root *Node
 }
 
+func NewNode(data int) *Node {
+	return &Node{data: data}
+}
+
 func (b *BTree) Create(data int) {
-	NewNode := &Node{data: data}
+	//NewNode := &Node{data: data}
 	if b.root == nil {
-		b.root = NewNode
+		b.root = NewNode(data)
 		return
 	}
 	b.root.Insert(data)
@@ -29,10 +33,10 @@ func (b *BTree) Create(data int) {
 }
 
 func (b *Node) Insert(data int) {
-	NewNode := &Node{data: data}
+	//NewNode := &Node{data: data}
 	if data < b.data {
 		if b.left == nil {
-			b.left = NewNode
+			b.left = NewNode(data)
 			return
 		} else {
 			b.left.Insert(data)
@@ -41,7 +45,7 @@ func (b *Node) Insert(data int) {
 
 	} else if data > b.data {
 		if b.right == nil {
-			b.right = NewNode
+			b.right = NewNode(data)
 			return
 		} else {
 			b.right.Insert(data)
