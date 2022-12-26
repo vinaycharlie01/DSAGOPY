@@ -29,8 +29,8 @@ how to open the git config:
 
 
 how to set git config:
-       git config --global user.name "vini"
-       git config --global user.email "vinaykshatriyas05@gmail.com"
+       git config --global user.name ""
+       git config --global user.email "@gmail.com"
 how to remove from git config:
     git config --unset --global user.name
     git config --unset --global user.email
@@ -50,7 +50,9 @@ git help <name>
 
 how to set defalt nodepad++
 --------------------------
-set env variable
+
+
+set editor
 git config --global core.editor"notepad++.exe -multiInst -nosession"
 
 

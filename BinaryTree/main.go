@@ -66,12 +66,40 @@ func height(root *BinaryTreeNode) int {
 	if root == nil {
 		return -1
 	} else {
-		//return Math.max(height(root.left)+1, height(root.right)+1)
 		b := math.Max(float64(height(root.left)+1), float64(height(root.right)+1))
 		return int(b)
 	}
 }
 
+func Not(root *BinaryTreeNode) bool {
+	if root != nil {
+		return true
+	}
+	return false
+}
+
+func Count(root *BinaryTreeNode) int {
+	//var a []any
+	if Not(root) {
+		//a = append(a, root.left.data)
+		return 1 + Count(root.left) + Count(root.right)
+	} else {
+		return 0
+	}
+}
+
+func CountLeft(root *BinaryTreeNode) int {
+	if Not(root) {
+		return 1 + CountLeft(root.left)
+	}
+	return 0
+}
+func CountRight(root *BinaryTreeNode) int {
+	if Not(root) {
+		return 1 + CountRight(root.left)
+	}
+	return 0
+}
 func rightSideView(root *BinaryTreeNode) []int {
 	result := []int{}
 
@@ -113,19 +141,6 @@ func insert(root *BinaryTreeNode, v int) *BinaryTreeNode {
 	return root
 }
 
-// def topView(root):
-//     d = {}
-//     def traverse(root,key,level):
-//         if root:
-//             if key not in d:
-//                 d[key] = [root.info, level]
-//             elif d[key][1]>level:
-//                 d[key] = [root.info, level]
-//             traverse(root.left,key -1,level+1)
-//             traverse(root.right,key+1,level+1)
-//     traverse(root,0,0)
-//     for key in sorted(d):
-//         print(d[key][0],end = ' ')
 var d = map[int][]int{}
 
 func traverse(root *BinaryTreeNode, key int, level int) {
@@ -199,6 +214,7 @@ func bfs(node []*BinaryTreeNode, res *[][]int) {
 
 func main() {
 	t1 := NewBinaryTree()
+	Count(t1)
 	topView(t1)
 	//PreOrder(t1)
 	//InOrder(t1)
